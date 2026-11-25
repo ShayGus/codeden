@@ -72,7 +72,10 @@ export function DictationStrip({ dictation }: { dictation: Dictation }) {
         <span role="status">
           {status}
           {status === "Listening…" && !heard && engine.live === "segments" && (
-            <span className="text-muted-foreground/60"> Text appears after each pause.</span>
+            <span className="text-muted-foreground/60 dark:text-muted-foreground/80">
+              {" "}
+              Text appears after each pause.
+            </span>
           )}
         </span>
       )}

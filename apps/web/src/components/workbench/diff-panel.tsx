@@ -32,6 +32,7 @@ import {
   type ReviewRange,
   scopeFromKey,
 } from "@/lib/diff-review";
+import { DIFF_THEMES } from "@/lib/diff-theme";
 import { relatedSessions } from "@/lib/fork-origin";
 import { ageShort } from "@/lib/format";
 import { useSession, useSnapshotData } from "@/lib/queries";
@@ -435,7 +436,7 @@ function FilePatch({
         <PatchDiff
           patch={file.patch}
           options={{
-            theme: { dark: "pierre-dark", light: "pierre-light" },
+            theme: DIFF_THEMES,
             themeType: options.theme,
             diffStyle: options.split ? "split" : "unified",
             overflow: options.wrap ? "wrap" : "scroll",

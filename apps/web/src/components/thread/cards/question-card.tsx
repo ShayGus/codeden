@@ -148,7 +148,7 @@ export function QuestionCard({
                         </span>
                       )}
                     </span>
-                    <span className="shrink-0 text-3xs text-muted-foreground/60 tabular-nums">
+                    <span className="shrink-0 text-3xs text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
                       {qi === 0 ? oi + 1 : ""}
                     </span>
                   </button>

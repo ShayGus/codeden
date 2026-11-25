@@ -179,7 +179,7 @@ export function ComposerBox({
             aria-expanded={combobox ? combobox.open : undefined}
             aria-controls={combobox?.open ? combobox.listId : undefined}
             aria-activedescendant={combobox?.open ? combobox.activeId : undefined}
-            className="block max-h-64 min-h-[56px] w-full resize-none bg-transparent px-4 pt-3.5 pb-1 text-[14px] leading-relaxed outline-none [field-sizing:content] placeholder:text-muted-foreground/70"
+            className="block max-h-64 min-h-[56px] w-full resize-none bg-transparent px-4 pt-3.5 pb-1 text-[14px] leading-relaxed outline-none [field-sizing:content] placeholder:text-muted-foreground/70 dark:placeholder:text-muted-foreground"
           />
           <DictationStrip dictation={dictation} />
           <div className="flex flex-wrap items-center gap-0.5 gap-y-1 px-2 pb-2">

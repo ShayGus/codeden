@@ -7,12 +7,15 @@ import { cn } from "@/lib/utils";
 import { useResolvedTheme } from "@/stores/theme";
 
 const themes = {
+  // The workbench panel's colour (`--panel`, #661). Every colour here is at least 5.8:1 on it,
+  // including bright black, which shells use for dimmed text (xterm's default is 2.7:1).
   dark: {
-    background: "#14161b",
+    background: "#232830",
     foreground: "#d9dce3",
     cursor: "#f2b34b",
     selectionBackground: "#f2b34b40",
-    black: "#1c1f26",
+    black: "#2b313a",
+    brightBlack: "#9aa3b2",
     green: "#7fd19b",
     cyan: "#7cc7e8",
     yellow: "#f2c66d",

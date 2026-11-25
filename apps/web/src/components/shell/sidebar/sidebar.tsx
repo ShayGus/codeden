@@ -221,7 +221,7 @@ export function Sidebar({ width, onClose }: { width: number | string; onClose?: 
           {data && (
             <Link
               to="/setup"
-              className="mt-2 px-2 text-3xs text-muted-foreground/60 hover:text-muted-foreground"
+              className="mt-2 px-2 text-3xs text-muted-foreground/60 hover:text-muted-foreground dark:text-muted-foreground/80"
             >
               Run first-time setup again
             </Link>

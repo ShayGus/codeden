@@ -264,7 +264,7 @@ export function ModelList({
           onKeyDown={onKeyDown}
           placeholder="Search models…"
           aria-label="Search models"
-          className="h-full w-full bg-transparent text-[13px] outline-none placeholder:text-muted-foreground/70"
+          className="h-full w-full bg-transparent text-[13px] outline-none placeholder:text-muted-foreground/70 dark:placeholder:text-muted-foreground"
         />
       </div>
       <CommandPrimitive.List

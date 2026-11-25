@@ -92,14 +92,14 @@ export function SubagentCard({ item, sessionId }: { item: ItemOf<"subagent">; se
           {stats.length > 0 ? (
             <span
               data-testid="subagent-figures"
-              className="shrink-0 text-muted-foreground/60 tabular-nums"
+              className="shrink-0 text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80"
               title={title}
             >
               · {stats.join(" · ")}
             </span>
           ) : (
             steps > 0 && (
-              <span className="shrink-0 text-muted-foreground/60 tabular-nums">
+              <span className="shrink-0 text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
                 · {steps} steps
               </span>
             )

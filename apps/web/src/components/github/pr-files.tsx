@@ -7,6 +7,7 @@ import { PatchDiff } from "@/components/on-demand";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useClient } from "@/lib/api";
+import { DIFF_THEMES } from "@/lib/diff-theme";
 import { platform } from "@/lib/platform";
 import { cn } from "@/lib/utils";
 import { useResolvedTheme } from "@/stores/theme";
@@ -180,7 +181,7 @@ function FileDiffBody({
         <PatchDiff
           patch={diff.patch}
           options={{
-            theme: { dark: "pierre-dark", light: "pierre-light" },
+            theme: DIFF_THEMES,
             themeType: theme,
             diffStyle: "unified",
             overflow: "wrap",

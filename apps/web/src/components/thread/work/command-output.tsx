@@ -66,7 +66,7 @@ export function CommandOutput({
           )}
         </pre>
       ) : (
-        <div className="px-3 py-2 font-mono text-[11.5px] text-muted-foreground/60">
+        <div className="px-3 py-2 font-mono text-[11.5px] text-muted-foreground/60 dark:text-muted-foreground/80">
           {running ? "Waiting for output…" : "No output"}
         </div>
       )}

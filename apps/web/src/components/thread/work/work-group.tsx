@@ -122,7 +122,9 @@ export function WorkGroup({
           </span>
         )}
         <span className="ml-auto flex shrink-0 items-center gap-1.5 pl-2">
-          <span className="text-3xs text-muted-foreground/60 tabular-nums">{meta}</span>
+          <span className="text-3xs text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
+            {meta}
+          </span>
           <ChevronRight
             className={cn(
               "size-3 text-muted-foreground/60 transition-transform",

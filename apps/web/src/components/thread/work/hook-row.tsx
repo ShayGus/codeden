@@ -125,7 +125,7 @@ export function HookRow({ run, warn = false }: { run: HookRun; warn?: boolean })
         )}
         <span className="ml-auto flex shrink-0 items-center gap-1.5 pl-2">
           {run.durationMs !== undefined && !running && (
-            <span className="text-3xs text-muted-foreground/60 tabular-nums">
+            <span className="text-3xs text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
               {duration(run.durationMs)}
             </span>
           )}
@@ -162,7 +162,9 @@ export function HookBatchRow({ runs }: { runs: HookRun[] }) {
         <span className="min-w-0 truncate text-2xs text-muted-foreground/70">{events}</span>
         <span className="ml-auto flex shrink-0 items-center gap-1.5 pl-2">
           {ms > 0 && (
-            <span className="text-3xs text-muted-foreground/60 tabular-nums">{duration(ms)}</span>
+            <span className="text-3xs text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
+              {duration(ms)}
+            </span>
           )}
           <ChevronRight
             className={cn(

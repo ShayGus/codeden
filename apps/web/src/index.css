@@ -126,51 +126,58 @@
   --diff-del: oklch(0.6 0.2 25);
 }
 
+/*
+ * Dark is a dimmed cool slate rather than near-black, so it stays readable in bright rooms
+ * (#661). Surfaces step up in lightness: sidebar < workbench panel < inset surface (code,
+ * diffs) < transcript < card < popover < muted < message < hover. Text, outlines, focus and
+ * status colours are opaque so their contrast doesn't depend on what is behind them: text
+ * >= 4.5:1 on every surface (muted text also at 70% on cards), control outlines and focus >= 3:1.
+ */
 .dark {
-  --background: oklch(0.165 0.008 264);
-  --foreground: oklch(0.94 0.006 264);
-  --card: oklch(0.195 0.009 264);
-  --card-foreground: oklch(0.94 0.006 264);
-  --popover: oklch(0.21 0.01 264);
-  --popover-foreground: oklch(0.94 0.006 264);
+  --background: oklch(0.29 0.016 258);
+  --foreground: oklch(0.96 0.006 258);
+  --card: oklch(0.315 0.016 258);
+  --card-foreground: oklch(0.96 0.006 258);
+  --popover: oklch(0.325 0.017 258);
+  --popover-foreground: oklch(0.96 0.006 258);
   --primary: oklch(0.8 0.15 70);
   --primary-foreground: oklch(0.21 0.04 60);
-  --secondary: oklch(0.235 0.01 264);
-  --secondary-foreground: oklch(0.9 0.006 264);
-  --muted: oklch(0.225 0.009 264);
-  --muted-foreground: oklch(0.66 0.014 264);
-  --accent: oklch(0.255 0.011 264);
-  --accent-foreground: oklch(0.96 0.006 264);
-  --destructive: oklch(0.68 0.19 24);
-  --border: oklch(1 0 0 / 7.5%);
-  --input: oklch(1 0 0 / 11%);
-  --ring: oklch(0.8 0.15 70 / 50%);
+  --secondary: oklch(0.345 0.016 258);
+  --secondary-foreground: oklch(0.93 0.008 258);
+  --muted: oklch(0.345 0.016 258);
+  --muted-foreground: oklch(0.84 0.016 258);
+  --accent: oklch(0.375 0.017 258);
+  --accent-foreground: oklch(0.97 0.006 258);
+  --destructive: oklch(0.73 0.17 24);
+  --border: oklch(0.4 0.015 258);
+  --input: oklch(0.6 0.016 258);
+  --ring: oklch(0.8 0.15 70);
 
   --chart-1: oklch(0.8 0.15 70);
-  --chart-2: oklch(0.7 0.12 230);
-  --chart-3: oklch(0.72 0.14 155);
-  --chart-4: oklch(0.7 0.15 300);
-  --chart-5: oklch(0.7 0.17 25);
+  --chart-2: oklch(0.72 0.12 230);
+  --chart-3: oklch(0.74 0.14 155);
+  --chart-4: oklch(0.72 0.15 300);
+  --chart-5: oklch(0.72 0.17 25);
 
-  --sidebar: oklch(0.145 0.007 264);
-  --sidebar-foreground: oklch(0.86 0.008 264);
+  --sidebar: oklch(0.26 0.016 258);
+  --sidebar-foreground: oklch(0.92 0.008 258);
   --sidebar-primary: oklch(0.8 0.15 70);
   --sidebar-primary-foreground: oklch(0.21 0.04 60);
-  --sidebar-accent: oklch(0.215 0.01 264);
-  --sidebar-accent-foreground: oklch(0.96 0.006 264);
-  --sidebar-border: oklch(1 0 0 / 6%);
-  --sidebar-ring: oklch(0.8 0.15 70 / 50%);
+  --sidebar-accent: oklch(0.33 0.017 258);
+  --sidebar-accent-foreground: oklch(0.97 0.006 258);
+  --sidebar-border: oklch(0.35 0.015 258);
+  --sidebar-ring: oklch(0.8 0.15 70);
 
-  --status-running: oklch(0.72 0.13 235);
+  --status-running: oklch(0.77 0.12 235);
   --status-waiting: oklch(0.8 0.15 75);
   --status-done: oklch(0.74 0.14 155);
-  --status-failed: oklch(0.68 0.19 24);
-  --status-idle: oklch(0.55 0.012 264);
+  --status-failed: oklch(0.73 0.17 24);
+  --status-idle: oklch(0.68 0.012 258);
 
-  --panel: oklch(0.155 0.008 264);
+  --panel: oklch(0.275 0.016 258);
   --glow: oklch(0.8 0.15 70 / 10%);
-  --message: oklch(0.235 0.01 264);
-  --surface: oklch(0.185 0.009 264);
+  --message: oklch(0.365 0.017 258);
+  --surface: oklch(0.28 0.016 258);
   --diff-add: oklch(0.74 0.15 150);
   --diff-del: oklch(0.7 0.18 25);
 }
@@ -192,6 +199,12 @@
   ::selection {
     background: oklch(0.8 0.15 70 / 30%);
   }
+}
+
+/* The diff and file views (`@pierre/diffs`, see lib/diff-theme.ts) sit on the app's inset
+   surface in dark mode rather than their theme's near-black. Their host rule loses to this. */
+.dark diffs-container {
+  --diffs-dark-bg: var(--surface);
 }
 
 /* Unlayered so it wins over Streamdown's utility classes. */

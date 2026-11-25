@@ -164,7 +164,9 @@ function ToolRowView({ sessionId, entry, defaultOpen = false }: ToolRowProps) {
         )}
         <span className="col-start-6 flex items-center gap-1.5 pl-2">
           {ms !== undefined && !running && (
-            <span className="text-3xs text-muted-foreground/60 tabular-nums">{duration(ms)}</span>
+            <span className="text-3xs text-muted-foreground/60 tabular-nums dark:text-muted-foreground/80">
+              {duration(ms)}
+            </span>
           )}
           <ChevronRight
             className={cn(

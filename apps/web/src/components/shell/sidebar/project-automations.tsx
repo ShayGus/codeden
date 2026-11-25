@@ -57,7 +57,13 @@ export function ProjectAutomations({ projectId }: { projectId: string }) {
                   className="h-6 min-w-0 flex-1 pr-1 pl-2 text-xs before:-left-[6px]"
                 >
                   <StatusDot tone={state?.paused ? "waiting" : state?.enabled ? "done" : "idle"} />
-                  <span className={cn("truncate", !state?.enabled && "text-sidebar-foreground/55")}>
+                  <span
+                    className={cn(
+                      "truncate",
+                      !state?.enabled &&
+                        "text-sidebar-foreground/55 dark:text-sidebar-foreground/75",
+                    )}
+                  >
                     {item.automation.name}
                   </span>
                 </NavRow>

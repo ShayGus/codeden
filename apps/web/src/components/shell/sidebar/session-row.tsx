@@ -87,7 +87,10 @@ export function SessionRow({ session }: { session: Session }) {
           >
             <StatusDot status={session.status} />
             <span
-              className={cn("min-w-0 flex-1 truncate", settled && "text-sidebar-foreground/55")}
+              className={cn(
+                "min-w-0 flex-1 truncate",
+                settled && "text-sidebar-foreground/55 dark:text-sidebar-foreground/75",
+              )}
             >
               {title}
             </span>

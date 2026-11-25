@@ -9,6 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { DIFF_THEMES } from "@/lib/diff-theme";
 import { useResolvedTheme } from "@/stores/theme";
 
 /** Diff preview before overwriting a native file (§12.4): a backup is written first. */
@@ -43,7 +44,7 @@ export function SaveDiffDialog({
             oldFile={{ name, contents: before }}
             newFile={{ name, contents: after }}
             options={{
-              theme: { dark: "pierre-dark", light: "pierre-light" },
+              theme: DIFF_THEMES,
               themeType: theme,
               diffStyle: "unified",
               overflow: "wrap",

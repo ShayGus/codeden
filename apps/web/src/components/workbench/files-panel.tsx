@@ -6,6 +6,7 @@ import { EmptyState } from "@/components/common/bits";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useClient } from "@/lib/api";
 import type { FileNode } from "@/lib/api/types";
+import { DIFF_THEMES } from "@/lib/diff-theme";
 import { buildFileTree } from "@/lib/file-tree";
 import { cn } from "@/lib/utils";
 import { useResolvedTheme } from "@/stores/theme";
@@ -140,7 +141,7 @@ export function FilesPanel({ sessionId }: { sessionId: string }) {
           <FileView
             file={{ name: file.data.path, contents: file.data.content }}
             options={{
-              theme: { dark: "pierre-dark", light: "pierre-light" },
+              theme: DIFF_THEMES,
               themeType: theme,
               overflow: "scroll",
               stickyHeader: true,

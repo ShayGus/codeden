@@ -162,7 +162,7 @@ export function FolderBrowser({
           onChange={(e) => setTyped(e.target.value)}
           placeholder="Select a folder · double-click to open · or paste a path and press Enter"
           aria-label="Folder path"
-          className="w-full bg-transparent px-3 py-1.5 font-mono text-2xs text-muted-foreground outline-none placeholder:text-muted-foreground/70 focus:text-foreground"
+          className="w-full bg-transparent px-3 py-1.5 font-mono text-2xs text-muted-foreground outline-none placeholder:text-muted-foreground/70 focus:text-foreground dark:placeholder:text-muted-foreground"
         />
       </form>
     </div>
